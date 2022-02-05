@@ -7,12 +7,16 @@ const commands = [
     new SlashCommandBuilder()
         .setName('chance')
         .setDescription('The chance of the bot responding with "L"')
-        .addNumberOption(option => option.setName('chance').setDescription('Sets the chance of "L"').setMinValue(0.00001).setMaxValue(50)),
+        .addNumberOption(option => option.setName('edit').setDescription('Sets the chance of "L"').setMinValue(0.00001).setMaxValue(100)),
     new SlashCommandBuilder()
         .setName('counting')
         .setDescription('Counting stuffs')
         .addSubcommand(subcommand => subcommand.setName('count').setDescription('Change or view the current count number').addNumberOption(option => option.setName('set').setDescription('Set the current count').setMinValue(0).setMaxValue(100000)))
-        .addSubcommand(subcommand => subcommand.setName('reset').setDescription('Resets the count'))
+        .addSubcommand(subcommand => subcommand.setName('reset').setDescription('Resets the count')),
+    new SlashCommandBuilder()
+        .setName('stats')
+        .setDescription('Displays stats about the server')
+        .addSubcommand(subcommand => subcommand.setName('pee').setDescription('Displays the number of times people have said it')),
         
 ].map(command => command.toJSON());
 
