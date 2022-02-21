@@ -44,7 +44,7 @@ client.addListener("messageCreate", (message) => {
     counting(message);
 
     if (
-        message.content.match(/i'?.*(to)? (pee|piss)/gim)
+        message.content.match(/i'?.*(to)? (pee|piss)( |$)/gim)
             ?.length > 0
     ) {
         config.stats.iHaveToPee++;
